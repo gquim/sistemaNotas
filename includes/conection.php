@@ -1,13 +1,14 @@
 <?php
 // /includes/db_connection.php
 
-$servername ="127.0.0.1:3310";
-$username = "root";
-$password = "";
-$dbname = "dbsistema";
+$DB_HOST=$_ENV["DB_HOST"];
+$DB_USER=$_ENV["DB_USER"];
+$DB_PASSWORD=["DB_PASSWORD"];
+$DB_NAME=["DB_NAME"];
+$DB_PORT=["DB_PORT"];
 
 // Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect("DB_HOST","DB_USER","DB_PASSWORD","DB_NAME","DB_PORT");
 echo"";
 // Verificar la conexión
 if ($conn->connect_error) {
